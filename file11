@@ -1,0 +1,21 @@
+<?php
+$host="localhost:3307";
+$username="root";
+$password="";
+$database="student";
+$conn=new mysqli($host,$username,$password,$database);
+if($conn->connect_error){
+echo("connection falied:".$conn->connect_error);
+}
+function getAggregateData($conn, $query, $label){
+$result=$conn->query($query);
+$row=$result->fetch_assoc();
+echo"$label:".$row[array_key_first($row)]."<br>";
+}
+getAggregateData($conn, "SELECT COUNT(*) as total_user FROM register","Total User ");
+getAggregateData($conn, "SELECT SUM(salary) as total_salary FROM register","Total Salary");
+getAggregateData($conn, "SELECT AVG(salary) as avg_salary FROM register","average Salary ");
+getAggregateData($conn, "SELECT MIN(salary) as min_salary FROM register","Minimum Salary ");
+getAggregateData($conn, "SELECT MAX(salary) as max_salary FROM register","Maximum Salary ");
+$conn->close();
+?>
