@@ -40,7 +40,7 @@ case “deposit”:
 $iBalance += $amt;
 echo “<p>Deposit: +$amt</p>”;
 break;
-case “withdraw”:
+case "withdraw":
 if ($amt <= $iBalance) {
 $iBalance -= $amt;
 Echo"<p>Withdrawal: -$amt</p>”;
