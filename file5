@@ -5,7 +5,6 @@
 </head>
 <body>
 <?php
-// Function to display array elements
 function displayArray($array) {
 echo "<ul>";
 foreach ($array as $value) {
@@ -26,9 +25,7 @@ return $largest;
 }
 // Check if the form has been submitted
 if (isset($_POST['submit'])) {
-// Get the user's input
 $numbers = explode(",", $_POST['numbers']);
-// Perform array operations
 echo "<h2>Original Array:</h2>";
 displayArray($numbers);
 echo "<h2>Sorted Array:</h2>";
@@ -37,7 +34,6 @@ displayArray($numbers);
 echo "<h2>Largest Value:</h2>";
 echo findLargest($numbers);
 } else {
-// Display the form if it hasn't been submitted yet
 ?>
 <h1>Enter Numbers</h1>
 <form method="post" action="">
